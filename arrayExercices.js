@@ -81,7 +81,23 @@ Exemple :
 contains([1, 2, 3, 4, 5], 3); // Renvoie true contains([1, 2, 3, 4, 5], 6); // Renvoie false 
 */
 
-console.log("exercice 4: ");
+// function contains(array, valueToFind) {
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] === valueToFind) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
+function contains(array, valueToFind) {
+  if (array.indexOf(valueToFind) !== -1){
+    return true;
+  } 
+  return false;
+}
+
+console.log("exercice 4: ", contains([1, 2, 3, 4, 5], 3), contains([1, 2, 3, 4, 5], 7));
 
 /*
 Exercice 5 : Compter le nombre d'éléments d'un tableau qui satisfont à une condition donnée
@@ -104,4 +120,17 @@ Sample array : var arr1 = [ -3, 8, 7, 6, 5, -4, 3, 2, 1 ];
 Sample Output : -4,-3,1,2,3,5,6,7,8
 */
 
-console.log("Exercice 6: ");
+function sortArray(arrayOfNumbers) {
+  for (let i = 0; i < arrayOfNumbers.length; i++) {
+    for (let j = i + 1; j < arrayOfNumbers.length; j++) {
+      if (arrayOfNumbers[i] > arrayOfNumbers[j]) {
+        let tempValue = arrayOfNumbers[i];
+        arrayOfNumbers[i] = arrayOfNumbers[j];
+        arrayOfNumbers[j] = tempValue;
+      }
+    }
+  }
+  return arrayOfNumbers;
+}
+
+console.log("Exercice 6: ", sortArray([ -3, 8, 7, 6, 5, -4, 3, 2, 1 ]));
